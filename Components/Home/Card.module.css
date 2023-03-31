@@ -1,0 +1,24 @@
+.image_container {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.read {
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.belowPart {
+  margin-top: 20px;
+}
+.belowPart p {
+  font-size: 12px;
+}
