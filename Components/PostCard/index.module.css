@@ -1,0 +1,43 @@
+.container {
+  /* border: 1px solid rgba(0, 0, 0, 0.167); */
+  padding: 10px;
+  border-radius: 10px;
+  transition-duration: 0.8s;
+}
+
+.image_container {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.imagediv {
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.read {
+  font-weight: bold;
+}
+
+.description {
+  margin: 20px 0;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.belowPart {
+  margin-top: 20px;
+  display: flex;
+}
+.belowPart p {
+  font-size: 12px;
+}

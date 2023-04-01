@@ -1,3 +1,16 @@
+.container {
+  border: 1px solid rgba(0, 0, 0, 0.167);
+  padding: 10px;
+  border-radius: 10px;
+  transition-duration: 0.8s;
+}
+
+.container:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
 .image_container {
   width: 100%;
   height: auto;
@@ -18,7 +31,54 @@
 
 .belowPart {
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .belowPart p {
   font-size: 12px;
+}
+
+/* Button Style */
+.buttonstyle {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+  padding: 5px;
+  margin: 0 5px;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.buttonstyle:hover,
+.buttonstyle:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.buttonstyle:hover {
+  transform: translateY(-1px);
+}
+
+.buttonstyle:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }

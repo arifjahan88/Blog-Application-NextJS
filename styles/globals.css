@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   --dark: #181818;
   --green: #80fb8d;
@@ -19,7 +21,7 @@ html {
 }
 
 body {
-  font-family: "Matter", sans-serif;
+  font-family: "Raleway", sans-serif;
   scroll-behavior: smooth;
 }
 
