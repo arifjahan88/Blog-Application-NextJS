@@ -1,5 +1,7 @@
 export const RoutingVariables = {
   home: "/",
-  post: "/post",
+  post: "/allpost",
   create_post: "/create-post",
+  login: "/api/auth/signin",
+  logout: "/api/auth/signout",
 };

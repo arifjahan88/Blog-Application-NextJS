@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./index.module.css";
+import Link from "next/link";
+import { RoutingVariables } from "@/utilites/RoutingVariables/RoutingVariables";
 
 const PostCard = ({ data }) => {
   return (
@@ -16,7 +18,9 @@ const PostCard = ({ data }) => {
           <p>Published Date : {data.published_date}</p>
         </div>
         <div>
-          <button>Back to Home</button>
+          <Link href={RoutingVariables.home}>
+            <button className={style.backbutton}>Back to Home</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -37,7 +37,14 @@
 .belowPart {
   margin-top: 20px;
   display: flex;
+  justify-content: space-between;
 }
 .belowPart p {
   font-size: 12px;
+}
+
+.backbutton {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
 }

@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
 import style from "./Card.module.css";
-import Image from "next/image";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const Card = ({ data }) => {
+  const { data: session } = useSession();
+
   return (
     <div className={style.container}>
       <img className={style.image_container} src={data.image_url} alt="" />
@@ -21,8 +22,12 @@ const Card = ({ data }) => {
           <p>Published Date : {data.published_date}</p>
         </div>
         <div>
-          <button className={style.buttonstyle}>Edit</button>
-          <button className={style.buttonstyle}>Delete</button>
+          {session && (
+            <>
+              <button className={style.buttonstyle}>Edit</button>
+              <button className={style.buttonstyle}>Delete</button>
+            </>
+          )}
         </div>
       </div>
     </div>

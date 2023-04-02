@@ -1,33 +1,19 @@
-import PostCard from "@/Components/PostCard";
 import React, { useEffect, useState } from "react";
+import PostCard from "@/Components/PostCard";
 import { getSession, signIn } from "next-auth/react";
 
-export const getStaticPaths = async () => {
+export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/blogs");
   const data = await res.json();
 
-  const paths = data.map((singledata) => {
-    return {
-      params: { id: singledata._id.toString() },
-    };
-  });
   return {
-    paths,
-    fallback: false,
+    props: {
+      blogsData: data,
+    },
   };
 };
 
-export const getStaticProps = async (context) => {
-  const id = context.params.id;
-  const res = await fetch(`http://localhost:5000/blogs/${id}`);
-  const data = await res.json();
-
-  return {
-    props: { data },
-  };
-};
-
-const PostDetails = ({ data }) => {
+const index = ({ blogsData }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -47,9 +33,11 @@ const PostDetails = ({ data }) => {
   }
   return (
     <>
-      <PostCard key={data._id} data={data} />
+      {blogsData.map((data) => (
+        <PostCard key={data._id} data={data}></PostCard>
+      ))}
     </>
   );
 };
 
-export default PostDetails;
+export default index;

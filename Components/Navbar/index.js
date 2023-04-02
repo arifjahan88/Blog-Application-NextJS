@@ -3,9 +3,11 @@ import style from "./index.module.css";
 import Link from "next/link";
 import { BsList } from "react-icons/bs";
 import { RoutingVariables } from "@/utilites/RoutingVariables/RoutingVariables";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { data: session, loading } = useSession();
 
   const closeNavbar = () => {
     setShowMenu(false);
@@ -27,22 +29,49 @@ const Navbar = () => {
                     Home
                   </Link>
                 </li>
+
                 <li>
                   <Link href={RoutingVariables.post} className={style.nav_link}>
                     Post
                   </Link>
                 </li>
+
                 <li>
                   <Link href={RoutingVariables.create_post} className={style.nav_link}>
                     Create Post
                   </Link>
                 </li>
-                <li>
-                  <Link href="">
-                    <div className={style.nav_btn_started}>
-                      <span>Get Started</span>
-                    </div>
-                  </Link>
+                <li className={style.authbutton}>
+                  {!session && !loading && (
+                    <>
+                      <Link href={RoutingVariables.login}>
+                        <div
+                          onClick={(e) => {
+                            e.preventDefault();
+                            signIn();
+                          }}
+                          className={style.nav_btn_started}
+                        >
+                          <span>Sign In</span>
+                        </div>
+                      </Link>
+                    </>
+                  )}
+                  {session && (
+                    <>
+                      <Link href={RoutingVariables.logout}>
+                        <div
+                          onClick={(e) => {
+                            e.preventDefault();
+                            signOut();
+                          }}
+                          className={style.nav_btn_started}
+                        >
+                          <span>Sign Out</span>
+                        </div>
+                      </Link>
+                    </>
+                  )}
                 </li>
               </ul>
             </nav>
@@ -60,20 +89,55 @@ const Navbar = () => {
             <nav className={style.mobile_navigation}>
               <ul>
                 <li>
-                  <Link href="" className={style.nav_link} onClick={closeNavbar}>
+                  <Link
+                    href={RoutingVariables.home}
+                    className={style.nav_link}
+                    onClick={closeNavbar}
+                  >
                     Home
                   </Link>
                 </li>
                 <li>Post</li>
                 <li>
-                  <Link href="" className={style.nav_link} onClick={closeNavbar}>
+                  <Link
+                    href={RoutingVariables.create_post}
+                    className={style.nav_link}
+                    onClick={closeNavbar}
+                  >
                     Create Post
                   </Link>
                 </li>
-                <li>
-                  <Link href="" className={style.nav_btn_started} onClick={closeNavbar}>
-                    Get Started
-                  </Link>
+                <li className={style.authbutton}>
+                  {!session && !loading && (
+                    <>
+                      <Link href={RoutingVariables.login}>
+                        <div
+                          onClick={(e) => {
+                            e.preventDefault();
+                            signIn();
+                          }}
+                          className={style.nav_btn_started}
+                        >
+                          <span>Sign In</span>
+                        </div>
+                      </Link>
+                    </>
+                  )}
+                  {session && (
+                    <>
+                      <Link href={RoutingVariables.logout}>
+                        <div
+                          onClick={(e) => {
+                            e.preventDefault();
+                            signOut();
+                          }}
+                          className={style.nav_btn_started}
+                        >
+                          <span>Sign Out</span>
+                        </div>
+                      </Link>
+                    </>
+                  )}
                 </li>
               </ul>
             </nav>
