@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./index.module.css";
-import Link from "next/link";
 import RichTextEditor from "./RichText";
+import { getSession, signIn } from "next-auth/react";
 
 export const Create_Post = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const securepage = async () => {
+      const session = await getSession();
+      if (!session) {
+        signIn();
+      } else {
+        setLoading(false);
+      }
+    };
+    securepage();
+  }, []);
+
+  if (loading) {
+    return <h2>Loading . . . .</h2>;
+  }
   return (
     <>
       <div className={style.form_container}>

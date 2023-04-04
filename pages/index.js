@@ -2,7 +2,7 @@ import Card from "@/Components/Home/Card";
 import style from "../styles/Home.module.css";
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/blogs");
+  const res = await fetch("https://blog-application-next-js-server.vercel.app/blogs");
   const data = await res.json();
 
   return {

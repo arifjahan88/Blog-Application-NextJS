@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getSession, signIn } from "next-auth/react";
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/blogs");
+  const res = await fetch("https://blog-application-next-js-server.vercel.app/blogs");
   const data = await res.json();
 
   const paths = data.map((singledata) => {
@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch(`http://localhost:5000/blogs/${id}`);
+  const res = await fetch(`https://blog-application-next-js-server.vercel.app/blogs/${id}`);
   const data = await res.json();
 
   return {

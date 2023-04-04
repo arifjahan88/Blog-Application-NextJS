@@ -97,7 +97,11 @@ const Navbar = () => {
                     Home
                   </Link>
                 </li>
-                <li>Post</li>
+                <li>
+                  <Link href={RoutingVariables.post} className={style.nav_link}>
+                    Post
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href={RoutingVariables.create_post}

@@ -3,7 +3,7 @@ import PostCard from "@/Components/PostCard";
 import { getSession, signIn } from "next-auth/react";
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/blogs");
+  const res = await fetch("https://blog-application-next-js-server.vercel.app/blogs");
   const data = await res.json();
 
   return {
