@@ -16,9 +16,9 @@ First, I created the client side. There, I did my project with Next JS, and then
 1. On the server side, I create a server using node.js and express.js and create a data.json file where I save all my data to access.
 2. Then, in virtual mode, run the server in vercel and call it from the client.
 
-# Live Site (Client) - [https://blog-application-next-js.vercel.app/](https://blog-application-next-js.vercel.app/)
+## Live Site (Client) - [https://blog-application-next-js.vercel.app/](https://blog-application-next-js.vercel.app/)
 
-# Live Site (Server) - [https://blog-application-next-js-server.vercel.app/](https://blog-application-next-js-server.vercel.app/)
+## Live Site (Server) - [https://blog-application-next-js-server.vercel.app/](https://blog-application-next-js-server.vercel.app/)
 
 ## GitHub Link (Client) - [https://github.com/arifjahan88/Blog-Application-NextJS](https://github.com/arifjahan88/Blog-Application-NextJS)
 
