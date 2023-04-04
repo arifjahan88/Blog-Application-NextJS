@@ -28,8 +28,7 @@ export const authOptions = {
     }),
   ],
   callbacks: {},
-  secret:
-    "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..fskH_vYtR302Mkdo.2QDv8FKdXbpveQOKObzMz3roPP4KthX1R9aIZIHFH7WlPOFpckfBYjbO_iiCjsZn27mjQuHMkybqtUBDjUU9FnSK3p_99sbxXXTrMDAktb9iAhWNNt_W0M6lEAs156mTlwiCZHFfnJiTwFC2At3Dkp8c6Nrj8hHsvCzemLYiCB4n9cUaFb136A.2eihjni48PrvxzTk0f17lw",
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 export default NextAuth(authOptions);
